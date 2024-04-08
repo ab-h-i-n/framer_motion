@@ -26,7 +26,22 @@ const Heading = ({ title }) => {
         {title}
       </motion.h1>
       <h1 className="font-black text-[1rem] lg:text-[2rem] text-gray-500 relative">
-        {description}
+        {description.split("").map((letter) => {
+          const random = Math.floor(Math.random() * -75) - 25;
+          const initial = random;
+
+          return (
+            <motion.div
+              className="inline-block"
+              initial={{ opacity: 0, y: initial }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              viewport={{ once: true }}
+            >
+              {letter === " " ? '\u00A0' : letter}
+            </motion.div>
+          );
+        })}
       </h1>
     </div>
   );

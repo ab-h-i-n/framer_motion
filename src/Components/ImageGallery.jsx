@@ -14,8 +14,8 @@ const ImageGallery = ({ things, className }) => {
     offset: [`start end`, "end start"],
   });
 
-  const sm = useTransform(scrollYProgress, [0, 1], ["30%", "0%"]);
-  const md = useTransform(scrollYProgress, [0, 1], ["-30%", "0%"]);
+  const sm = useTransform(scrollYProgress, [0, 1], ["40%", "0%"]);
+  const md = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
 
   return (
     <div className={`relative ${className}`} ref={container}>
